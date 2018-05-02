@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+{% block content%}
+<a href="/create_vm/">CREEATE VM</a><br>
+<table border=2>
+	<tr>
+		<td>name</td>
+		<td>harddisk</td>
+		<td>cpu cores</td>
+		<td>instance</td>
+	</tr>
+	{% for row in data%}
+		<tr>
+			<td>{{ row.name }}</td>
+			<td>{{ row.harddisk }}</td>
+			<td>{{ row.ram }}</td>
+			<td>{{ row.cpu_cores }}</td>
+			<td>{{ row.instance }}</td>
+			<td><a href="/expand_vm/?id={{row.id}}">expand VM</a></td>
+<td><a href="/delete_vm/?id={{row.id}}">delete VM</a></td>
+<td><a href="/increase_ram_vm/?id={{row.id}}">increase VM</a></td>
+<td><a href="/add_cores_vm/?id={{row.id}}">ADD CORES VM</a></td>
+		</tr>
+	{% endfor %}
+	
+</table>
+
+{% endblock%}

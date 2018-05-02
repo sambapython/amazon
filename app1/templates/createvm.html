@@ -1,0 +1,8 @@
+{% extends 'base.html'%}
+{% block content%}
+<form method="post"> 
+	{% csrf_token %}
+	{{ vm_form.as_p }}
+	<input type="submit" name="" value="createVM">
+</form>
+{% endblock%}
